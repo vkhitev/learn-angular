@@ -1,6 +1,6 @@
 <h2>My Heroes</h2>
 
-<app-hero-form (notify)="this.heroes.push($event)"></app-hero-form>
+<app-hero-form [initialModel]="initialHero" (notify)="save($event)"></app-hero-form>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes">

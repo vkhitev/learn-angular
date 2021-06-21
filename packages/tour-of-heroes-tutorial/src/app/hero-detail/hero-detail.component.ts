@@ -2,6 +2,7 @@ import { Location } from '@angular/common'
 import { Component, Input, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Hero } from '../hero'
+import { HeroModel } from '../hero-form/hero-form.component'
 import { HeroService } from '../hero.service'
 
 @Component({
@@ -30,9 +31,9 @@ export class HeroDetailComponent implements OnInit {
     this.location.back()
   }
 
-  save(): void {
+  save(hero: HeroModel): void {
     if (this.hero) {
-      this.heroService.updateHero(this.hero).subscribe(() => {
+      this.heroService.updateHero({ ...hero, id: this.hero.id }).subscribe(() => {
         this.goBack()
       })
     }
