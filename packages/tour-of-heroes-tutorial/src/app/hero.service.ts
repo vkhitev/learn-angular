@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Hero } from './hero'
 import { MessageService } from './message.service'
-import { HEROES } from './mock-heroes'
 
 @Injectable({
   providedIn: 'root',

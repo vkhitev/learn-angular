@@ -19,8 +19,14 @@ export class HeroFormComponent implements OnInit {
     if (trimmedName === '') {
       return
     }
-    this.heroService.addHero({ name: trimmedName }).subscribe(hero => {
-      this.notify.emit(hero)
-    })
+    this.heroService
+      .addHero({
+        name: trimmedName,
+        power: 'Power',
+        alterEgo: 'Alter Ego',
+      })
+      .subscribe(hero => {
+        this.notify.emit(hero)
+      })
   }
 }
