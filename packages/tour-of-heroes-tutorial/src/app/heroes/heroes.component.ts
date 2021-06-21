@@ -22,10 +22,10 @@ export class HeroesComponent implements OnInit {
 
   add(name: string): void {
     const trimmedName = name.trim()
-    if (!trimmedName) {
+    if (trimmedName === '') {
       return
     }
-    this.heroService.addHero({ name } as Hero).subscribe(hero => {
+    this.heroService.addHero({ name: trimmedName }).subscribe(hero => {
       this.heroes.push(hero)
     })
   }
